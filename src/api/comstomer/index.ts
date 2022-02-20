@@ -1,5 +1,4 @@
-// 权限问题后期增加
-import { get, post } from '@utils/http/axios'
+import { get, post } from '@utils/http'
 import { IResponse } from '@utils/http/axios/type'
 import { IListReqParams } from './types'
 

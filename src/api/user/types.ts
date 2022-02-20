@@ -1,14 +1,14 @@
-export interface ReqParams {
+export interface IReqParams {
   username: string
   password: string
 }
 
-export interface ReqAuth {
+export interface IReqAuth {
   auths: string[]
   modules: string[]
   is_admin?: 0 | 1
 }
 
-export interface LoginRes {
+export interface ILoginRes {
   token: string
 }
