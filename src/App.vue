@@ -21,8 +21,6 @@ let sendAxios = async () => {
   requesStatus.value = 'loading'
   const { result } = await getUserProfile({ username1: 'string', password: 'string' })
   console.log('userData-->', result)
-  // userData = reactive(result)
-  // userData = result
   // reactive定义的数据不能整体重定义：如userData = {xx:aaa},只能单独赋值某个属性或者使用Object.assign
   userData.comtomerKey = 'comtomerKey-new'
   Object.assign(userData, result)
@@ -41,13 +39,22 @@ let clickHandle = (e: any) => {
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
-  <p>Hello-component</p>
-  <p>userData-zhName->{{ userData.zhName }}</p>
-  <p>userData-comtomerKey->{{ userData.comtomerKey }}</p>
-  <p>oneCount-->{{ oneCount }}</p>
-  <p>requesStatus-->{{ requesStatus }}</p>
+  <section class="topBox borderRed" style="display: flex">
+    <div style="width: 50%">
+      <p>userData-zhName->{{ userData.zhName }}</p>
+      <p>oneCount-->{{ oneCount }}</p>
+      <p>requesStatus-->{{ requesStatus }}</p>
+      <p @click="clickHandle">刷新顶部数据</p>
+    </div>
+    <div class="linkBox" style="width: 50%">
+      <router-link to="/">Go to Home</router-link><br />
+      <router-link to="/demo">Go to demo</router-link><br />
+      <router-link to="/demo/user/123">Go to user</router-link><br />
+      <router-link to="/demo/test">Go to test</router-link><br />
+    </div>
+  </section>
   <hr />
-  <p @click="clickHandle">发送请求</p>
+  <router-view></router-view>
 </template>
 
 <style>
@@ -57,6 +64,17 @@ let clickHandle = (e: any) => {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 20px;
+}
+.topBox {
+  margin: 20px;
+  text-align: left;
+}
+.borderRed {
+  border: 1px solid red;
+}
+.linkBox a {
+  display: inline-block;
+  padding: 5px;
 }
 </style>
