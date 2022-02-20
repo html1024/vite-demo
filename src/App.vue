@@ -19,7 +19,7 @@ const oneCount = ref(100)
 let requesStatus = ref('beore')
 let sendAxios = async () => {
   requesStatus.value = 'loading'
-  const { result } = await getUserProfile()
+  const { result } = await getUserProfile({ username1: 'string', password: 'string' })
   console.log('userData-->', result)
   // userData = reactive(result)
   // userData = result
@@ -33,7 +33,7 @@ onMounted(async () => {
   await sendAxios()
 })
 let clickHandle = (e: any) => {
-  console.log('clickHandle-->', e)
+  console.log('clickHandle-->', e.type)
   sendAxios()
 }
 </script>
@@ -41,7 +41,7 @@ let clickHandle = (e: any) => {
 <template>
   <!-- <img alt="Vue logo" src="./assets/logo.png" />
   <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
-  <p>Hello1</p>
+  <p>Hello-component</p>
   <p>userData-zhName->{{ userData.zhName }}</p>
   <p>userData-comtomerKey->{{ userData.comtomerKey }}</p>
   <p>oneCount-->{{ oneCount }}</p>

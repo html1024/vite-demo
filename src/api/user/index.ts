@@ -1,21 +1,15 @@
-// 权限问题后期增加
-import { get, post } from '@utils/http/axios'
+import { get, post } from '@utils/http'
 import { IResponse } from '@utils/http/axios/type'
-import { ReqAuth, ReqParams, ResResult, LoginRes } from './types'
-// import { UserState } from '@/store/modules/user/types'
-// import axios from 'axios';
+import { ReqAuth, ReqParams, LoginRes } from './types'
+import { UserState } from '@/store/modules/user/types'
+
 enum URL {
   login = '/user/login',
   logout = '/user/logout',
   profile = '/user/getInfo',
 }
 
-export interface LoginData {
-  username: string
-  password: string
-}
-
-const getUserProfile = async () => get<IResponse>(URL.profile)
-const login = async (data: LoginData) => post<IResponse>(URL.login, data)
+const getUserProfile = async (data: ReqParams) => get<IResponse>(URL.profile, data)
+const login = async (data: ReqParams) => post<IResponse>(URL.login, data)
 const logout = async () => post<LoginRes>(URL.logout)
 export { getUserProfile, logout, login }
