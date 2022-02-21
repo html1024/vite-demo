@@ -184,7 +184,7 @@ export function uuid(length = 32) {
  * @param n
  * @returns {number}
  */
-export function random(m, n) {
+export function random(n, m) {
   return Math.floor(Math.random() * (m - n) + n)
 }
 

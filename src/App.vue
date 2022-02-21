@@ -1,3 +1,25 @@
+<template>
+  <!-- <img alt="Vue logo" src="./assets/logo.png" />
+  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
+  <section class="topBox borderRed" style="display: flex">
+    <div style="width: 50%">
+      <p>userData-zhName->{{ userData.zhName }}</p>
+      <p>oneCount-->{{ oneCount }}</p>
+      <p>requesStatus-->{{ requesStatus }}</p>
+      <p @click="clickHandle">刷新顶部数据</p>
+    </div>
+    <div class="linkBox" style="width: 50%">
+      <router-link to="/">Home</router-link>
+      <router-link to="/demo">demo</router-link>
+      <router-link to="/demo/user/123">user</router-link>
+      <router-link to="/demo/test">test</router-link>
+      <router-link to="/demo/pinia">pinia</router-link>
+      <router-link to="/demo/vuex4">vuex4</router-link>
+    </div>
+  </section>
+  <hr />
+  <router-view></router-view>
+</template>
 <script setup lang="ts">
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
@@ -36,27 +58,6 @@ let clickHandle = (e: any) => {
 }
 </script>
 
-<template>
-  <!-- <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + TypeScript + Vite" /> -->
-  <section class="topBox borderRed" style="display: flex">
-    <div style="width: 50%">
-      <p>userData-zhName->{{ userData.zhName }}</p>
-      <p>oneCount-->{{ oneCount }}</p>
-      <p>requesStatus-->{{ requesStatus }}</p>
-      <p @click="clickHandle">刷新顶部数据</p>
-    </div>
-    <div class="linkBox" style="width: 50%">
-      <router-link to="/">Go to Home</router-link><br />
-      <router-link to="/demo">Go to demo</router-link><br />
-      <router-link to="/demo/user/123">Go to user</router-link><br />
-      <router-link to="/demo/test">Go to test</router-link><br />
-    </div>
-  </section>
-  <hr />
-  <router-view></router-view>
-</template>
-
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -75,6 +76,6 @@ let clickHandle = (e: any) => {
 }
 .linkBox a {
   display: inline-block;
-  padding: 5px;
+  padding: 8px 12px;
 }
 </style>

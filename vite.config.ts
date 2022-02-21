@@ -24,6 +24,7 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
         '@comps': resovePath('./src/components'),
         '@utils': resovePath('./src/utils'),
         '@api': resovePath('./src/api'),
+        '@pinia': resovePath('./src/piniaStore'),
       },
     },
     // plugins

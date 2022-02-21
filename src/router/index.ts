@@ -1,29 +1,12 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-
-const routes: RouteRecordRaw[] = [
-  {
-    path: '/',
-    name: 'Home',
-    component: () => import('@/views/home/index.vue'), // 注意这里要带上 文件后缀.vue
-  },
-  {
-    path: '/demo',
-    name: 'Demo',
-    component: () => import('@/views/demo/index.vue'),
-    children: [
-      {
-        path: 'user/:id',
-        name: 'User',
-        component: () => import('@/views/demo/user.vue'),
-      },
-      {
-        path: 'test',
-        name: 'Test',
-        component: () => import('@/views/demo/test.vue'),
-      },
-    ],
-  },
-]
+import appRoutes from './app'
+import demoRoutes from './demo'
+const noMatch = {
+  // 404跳转到首页(此配置必须处于路由最后一项)
+  path: '/:catchAll(.*)',
+  redirect: { name: 'home' },
+}
+const routes: RouteRecordRaw[] = [...demoRoutes, ...appRoutes, noMatch]
 
 const router = createRouter({
   history: createWebHistory(),
