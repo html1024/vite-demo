@@ -33,6 +33,7 @@ export const useUserStore = defineStore('user', {
     },
     // 设置用户的信息
     setInfo(partial: Partial<UserState>) {
+      // 同时设置多个属性
       this.$patch(partial)
     },
     // 重置用户信息
