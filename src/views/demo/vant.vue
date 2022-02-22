@@ -1,6 +1,6 @@
 <template>
-  <div class="vantPage">
-    <span>{{ pageName }}</span
+  <div class="vantPage themeBorder">
+    <span class="themeColor">{{ pageName }}</span
     ><van-icon name="chat-o" badge="99+" />
     <p class="name">zhName:{{ zhName }}</p>
     <p>enName:{{ enName }}</p>
