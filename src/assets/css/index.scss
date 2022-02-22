@@ -1,0 +1,174 @@
+// @import './font.scss';
+
+html,body,div,span,applet,object,p,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+	margin:0;
+	padding:0;
+	border:0;
+	font-size:100%;
+	font:inherit;
+	font-weight:normal;
+	vertical-align:baseline;
+}
+
+body {
+  font-family: 'Corporate-S', 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif, 'HanYiSong' !important;
+}
+/* HTML5 display-role reset for older browsers */
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+	display:block;
+}
+ol,ul,li {
+	list-style:none;
+}
+blockquote,q {
+	quotes:none;
+}
+blockquote:before,blockquote:after,q:before,q:after {
+	content:'';
+	content:none;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+th,td {
+	vertical-align:middle;
+}
+/* custom */
+a {
+	outline:none;
+	color:#16418a;
+	text-decoration:none;
+	-webkit-backface-visibility:hidden;
+}
+a:focus {
+	outline:none;
+}
+input:focus,select:focus,textarea:focus {
+	outline:-webkit-focus-ring-color auto 0;
+}
+/* vertical竖向 horizontal横向 */
+/* 水平横向两边分布（顶边） */
+.fvlr{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.fvlrw{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.fvlw{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.fvlru{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+/* 水平x向左，上下居中（顶边） */
+.fvl{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.fvr{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.fvlu{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.fvcd{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* 竖向左侧上下分布（顶边） */
+.fhlud{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+/* 竖向中间上下分布（顶边） */
+.fhcud{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+/* 竖向中间上下分布（顶边） */
+.fhl{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.fhlu{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+/* 竖向中间上下分布（顶边） */
+.fhr{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+}
+/* 横竖居中 */
+.fc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.fhlc{
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+[b]{
+  border: 1px solid red;
+}
+
+/* 单行文本超出省略号 */
+.ellipsis{
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+/* 3行文本超出省略号 */
+.ellipsisRow{
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 3;
+	overflow: hidden;
+}
+.fw{
+  font-weight: bold;
+}
+.themeColor{
+  color: #3088c5;
+}
+.textBreak{
+  word-wrap: break-word;
+  word-break: break-all;
+}
+.line{
+  text-decoration: line-through;
+}

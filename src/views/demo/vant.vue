@@ -1,10 +1,11 @@
 <template>
-  <div class="piniaPage">
+  <div class="vantPage">
     <span>{{ pageName }}</span
     ><van-icon name="chat-o" badge="99+" />
-    <p>zhName:{{ zhName }}</p>
+    <p class="name">zhName:{{ zhName }}</p>
     <p>enName:{{ enName }}</p>
-    <p>token:{{ token }}</p>
+    <p b>token:{{ token }}</p>
+    <p><a href="http://www.baidu.com" target="_blank">这是一个超链接</a></p>
     <van-button type="primary" size="mini" @click="refreshUserStore"
       >刷新pinia的user数据</van-button
     >
@@ -78,17 +79,20 @@ watch(
 )
 </script>
 
-<style scoped>
-.piniaPage {
+<style lang="scss" scoped>
+.vantPage {
   text-align: left;
+  .name {
+    color: red;
+  }
 }
-.piniaPage span {
+.vantPage span {
   display: inline-block;
   width: 150px;
   /* background-color: aqua; */
 }
 
-.piniaPage .preBox {
+.vantPage .preBox {
   max-height: 360px;
   border: 1px solid red;
   overflow: hidden;
