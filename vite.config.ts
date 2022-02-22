@@ -3,6 +3,7 @@ import path from 'path'
 import vue from '@vitejs/plugin-vue'
 import { VITE_DROP_CONSOLE, VITE_PORT } from './config/constant'
 import proxy from './config/proxy'
+import styleImport, { VantResolve } from 'vite-plugin-style-import'
 
 function resovePath(paths: string) {
   // 如何 __dirname 找不到 需要 yarn add @types/node --save-dev
@@ -28,7 +29,13 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
       },
     },
     // plugins
-    plugins: [vue()],
+    plugins: [
+      vue(),
+      styleImport({
+        // 自动按需引入vant组件的样式
+        resolves: [VantResolve()],
+      }),
+    ],
     build: {
       target: 'modules',
       outDir: 'dist', //指定输出路径

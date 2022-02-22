@@ -15,6 +15,7 @@
       <router-link to="/demo/test">test</router-link>
       <router-link to="/demo/pinia">pinia</router-link>
       <router-link to="/demo/vuex4">vuex4</router-link>
+      <router-link to="/demo/vant">vant</router-link>
     </div>
   </section>
   <hr />
@@ -58,7 +59,7 @@ let clickHandle = (e: any) => {
 }
 </script>
 
-<style>
+<style scoped>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

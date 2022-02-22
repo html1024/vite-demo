@@ -1,18 +1,26 @@
 <template>
   <div class="piniaPage">
-    <span>{{ pageName }}</span>
+    <span>{{ pageName }}</span
+    ><van-icon name="chat-o" badge="99+" />
     <p>zhName:{{ zhName }}</p>
     <p>enName:{{ enName }}</p>
-    <p>userStore.token:{{ userStore.token }}</p>
     <p>token:{{ token }}</p>
-    <button @click="refreshUserStore">刷新pinia的user数据</button>
-    <button @click="resetUserStore">重置pinia的user数据</button>
-    <button @click="getStoreToken">getStoreToken</button>
-    <button @click="getStoreEnName">getStoreEnName</button>
-    <button @click="setStoreEnName">setStoreEnName</button>
-    <button @click="patchUserStoreStateFn">patchUserStoreStateFn</button>
-    <button @click="patchUserStoreStateObj">patchUserStoreStateObj</button>
-    <button @click="replaceUserStoreState">replaceUserStoreState</button>
+    <van-button type="primary" size="mini" @click="refreshUserStore"
+      >刷新pinia的user数据</van-button
+    >
+    <van-button type="primary" size="mini" @click="resetUserStore">重置pinia的user数据</van-button>
+    <van-button type="primary" size="mini" @click="getStoreToken">getStoreToken</van-button>
+    <van-button type="primary" size="mini" @click="getStoreEnName">getStoreEnName</van-button>
+    <van-button type="primary" size="mini" @click="setStoreEnName">setStoreEnName</van-button>
+    <van-button type="primary" size="mini" @click="patchUserStoreStateFn"
+      >patchUserStoreStateFn</van-button
+    >
+    <van-button type="primary" size="mini" @click="patchUserStoreStateObj"
+      >patchUserStoreStateObj</van-button
+    >
+    <van-button type="primary" size="mini" @click="replaceUserStoreState"
+      >replaceUserStoreState</van-button
+    >
     <hr />
     <pre class="preBox">{{ userStore }}</pre>
   </div>
@@ -26,7 +34,7 @@ console.log('userStore', userStore)
 const zhName = computed(() => userStore.zhName)
 const enName = computed(() => userStore.enName)
 const token = computed(() => userStore.token)
-const pageName = ref('pinia-index')
+const pageName = ref('vant-index')
 const refreshUserStore = () => {
   userStore.getUserInfo()
 }
@@ -77,12 +85,9 @@ watch(
 .piniaPage span {
   display: inline-block;
   width: 150px;
-  background-color: aqua;
+  /* background-color: aqua; */
 }
 
-.piniaPage button {
-  margin: 5px 10px;
-}
 .piniaPage .preBox {
   max-height: 360px;
   border: 1px solid red;

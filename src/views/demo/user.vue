@@ -19,4 +19,4 @@ const toTest = () => {
 }
 </script>
 
-<style></style>
+<style scoped></style>

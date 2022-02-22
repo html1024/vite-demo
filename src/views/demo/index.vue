@@ -1,3 +1,7 @@
+<template>
+  <h1>demo-age-{{ userStore.age }}</h1>
+  <router-view></router-view>
+</template>
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue'
 import { useUserStore } from '@/piniaStore'
@@ -10,10 +14,4 @@ watch(
   }
 )
 </script>
-
-<template>
-  <h1>demo-age-{{ userStore.age }}</h1>
-  <router-view></router-view>
-</template>
-
-<style></style>
+<style scoped></style>
