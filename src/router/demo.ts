@@ -31,6 +31,11 @@ const demoRoutes: RouteRecordRaw[] = [
         name: 'Vant',
         component: () => import('@/views/demo/vant.vue'),
       },
+      {
+        path: 'ref',
+        name: 'Ref',
+        component: () => import('@/views/demo/ref.vue'),
+      },
     ],
   },
 ]

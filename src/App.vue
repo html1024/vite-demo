@@ -16,6 +16,7 @@
       <router-link to="/demo/pinia">pinia</router-link>
       <router-link to="/demo/vuex4">vuex4</router-link>
       <router-link to="/demo/vant">vant</router-link>
+      <router-link to="/demo/ref">ref</router-link>
     </div>
   </section>
   <hr />
