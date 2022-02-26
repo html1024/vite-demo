@@ -20,12 +20,12 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
   return {
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, './src'),
-        '@config': path.resolve(__dirname, './config'),
-        '@components': path.resolve(__dirname, './src/components'),
-        '@utils': path.resolve(__dirname, './src/utils'),
-        '@api': path.resolve(__dirname, './src/api'),
-        '@pinia': path.resolve(__dirname, './src/piniaStore'),
+        '@': resovePath('./src'),
+        '@config': resovePath('./config'),
+        '@components': resovePath('./src/components'),
+        '@utils': resovePath('./src/utils'),
+        '@api': resovePath('./src/api'),
+        '@pinia': resovePath('./src/piniaStore'),
       },
     },
     // plugins

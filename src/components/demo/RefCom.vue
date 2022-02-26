@@ -1,7 +1,9 @@
 <template>
   <div b>
     refCom
-    <p>{{ msg }}----{{ count }}</p>
+    <p>msg----{{ msg }}</p>
+    <p>count是子组件数据---{{ count }}</p>
+    <van-button type="primary" size="mini" @click="emitToParent">通知父组件</van-button>
   </div>
 </template>
 <script setup lang="ts">
@@ -9,7 +11,10 @@
 import { computed, ref, watch } from 'vue'
 import { Toast } from 'vant'
 import { useUserStore } from '@/piniaStore'
-import { random } from '@utils'
+// import { random } from '@utils/index.ts'
+// defineProps 或 defineEmits还不支持复杂的类型和从其它文件进行类型导入。理论上来说，将来是可能实现类型导入的,详见下一行官网地址
+// https://v3.cn.vuejs.org/api/sfc-script-setup.html#%E4%BB%85%E9%99%90-typescript-%E7%9A%84%E5%8A%9F%E8%83%BD
+const emit = defineEmits(['change', 'delete'])
 defineProps<{ msg: string }>()
 // const props = defineProps({
 //   msg: String,
@@ -27,13 +32,18 @@ defineProps<{ msg: string }>()
 // })
 // =======================================================
 const count = ref(10)
-const emit = defineEmits(['change', 'delete'])
+const toParantData = ref(999999)
 
 const userStore = useUserStore()
 const customRefMethod = (data) => {
-  const taostData = (data && JSON.stringify(data)) || 'dataDefaualt'
+  let taostData = (data && JSON.stringify(data)) || 'dataDefaualt'
+  // taostData += random(100, 1000)
   Toast('customRefMethod--data-->' + taostData)
 }
+const emitToParent = () => {
+  emit('change', { num: toParantData.value })
+}
+
 watch(
   () => userStore.enName,
   (n, o) => {
