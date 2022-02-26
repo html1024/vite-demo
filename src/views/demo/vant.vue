@@ -1,6 +1,6 @@
 <template>
   <div class="vantPage themeBorder">
-    <span class="themeColor">{{ pageName }}</span
+    <span class="themeColor">{{ pageName }} vant组件引入</span
     ><van-icon name="chat-o" badge="99+" />
     <p class="name">zhName:{{ zhName }}</p>
     <p>enName:{{ enName }}</p>
@@ -88,7 +88,7 @@ watch(
 }
 .vantPage span {
   display: inline-block;
-  width: 150px;
+  width: 750px;
   /* background-color: aqua; */
 }
 

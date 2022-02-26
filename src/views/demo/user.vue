@@ -1,5 +1,5 @@
 <template>
-  <h1>user</h1>
+  <h1>user--获取动态路由传参和url传参</h1>
   <!-- <div>route:{{ route }}</div> -->
   <div>route.params:{{ route.params }}</div>
   <div>queryData:{{ queryData }}</div>

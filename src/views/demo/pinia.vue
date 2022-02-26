@@ -1,6 +1,6 @@
 <template>
   <div class="piniaPage">
-    <span>{{ pageName }}</span>
+    <span>{{ pageName }}，全局状态管理插件pinia的使用（获取/修改、重置）</span>
     <p>zhName:{{ zhName }}</p>
     <p>enName:{{ enName }}</p>
     <p>userStore.token:{{ userStore.token }}</p>
@@ -76,7 +76,7 @@ watch(
 }
 .piniaPage span {
   display: inline-block;
-  width: 150px;
+  width: 900px;
   background-color: aqua;
 }
 
