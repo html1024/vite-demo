@@ -3,6 +3,7 @@ import './assets/css/index.scss'
 import App from './App.vue'
 import router from './router/index'
 import piniaStore from './piniaStore'
+import { vuexStore, key } from './vuexStore'
 
 const app = createApp(App)
 import {
@@ -108,4 +109,5 @@ app
   .use(Radio)
   .use(CountDown)
   .use(Form)
-app.use(router).use(piniaStore).mount('#app')
+
+app.use(router).use(piniaStore).use(vuexStore, key).mount('#app')
